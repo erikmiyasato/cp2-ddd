@@ -4,33 +4,30 @@
 
 package br.com.fiap.models;
 
-import br.com.fiap.enums.TipoPainelEnum;
+public class Camera extends Produto {
+    private int megapixels;
 
-public class Televisao extends Produto {
-    private TipoPainelEnum tipoPainel;
-
-    public TipoPainelEnum getTipoPainel() {
-        return tipoPainel;
+    public int getMegapixels() {
+        return megapixels;
     }
 
-    public void setTipoPainel(TipoPainelEnum tipoPainel) {
-        this.tipoPainel = tipoPainel;
+    public void setMegapixels(int megapixels) {
+        this.megapixels = megapixels;
     }
 
     @Override
     public double calcularTotal() {
         double total = getPrecoProduto() * getQuantidadeProduto().getValor();
-        if (isGarantiaExtendida()) total += 200;
-        if (tipoPainel == TipoPainelEnum.OLED) total += 500;
-        if (tipoPainel == TipoPainelEnum.QLED) total += 300;
+        if (isGarantiaExtendida()) total += 250;
+        if (megapixels > 24) total += 350;
         return total;
     }
 
     @Override
     public void exibirProduto() {
-        System.out.println("Televisão: " + getNomeProduto());
+        System.out.println("Câmera: " + getNomeProduto());
         System.out.println("Fabricante: " + getFabricanteProduto());
-        System.out.println("Tipo de Painel: " + tipoPainel);
+        System.out.println("Megapixels: " + megapixels + "MP");
         System.out.println("Preço: R$ " + getPrecoProduto());
         System.out.println("Quantidade: " + getQuantidadeProduto().getValor());
         System.out.println("Garantia Estendida: " + (isGarantiaExtendida() ? "Sim" : "Não"));
