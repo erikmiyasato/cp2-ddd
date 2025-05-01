@@ -132,7 +132,7 @@ public class ProdutoTeste {
         String garantiaInput = scanner.nextLine().trim().toUpperCase();
         boolean garantiaExtendida = garantiaInput.equals("S");
 
-        // 3. Instancia a subclasse conforme a categoria
+
         Produto produto;
         switch (categoria) {
             case TELEVISAO:

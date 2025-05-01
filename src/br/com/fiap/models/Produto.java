@@ -17,7 +17,6 @@ public abstract class Produto {
     private QuantidadeProdutoEnum quantidadeProduto;
     private boolean garantiaExtendida;
 
-    // Método auxiliar se necessário (pode ser usado internamente ou removido)
     public double calcularTotal(double preco, int quantidade, boolean garantiaExtendida) {
         double total = preco * quantidade;
         if (garantiaExtendida) {
@@ -26,8 +25,7 @@ public abstract class Produto {
         return total;
     }
 
-    // Método abstrato para que cada subclasse implemente sua própria lógica de cálculo
-    public abstract double calcularTotal();
+     public abstract double calcularTotal();
 
     public void exibirProduto() {
         System.out.println("=== Detalhes do Produto ===");
@@ -39,7 +37,7 @@ public abstract class Produto {
         System.out.println();
     }
 
-    // Getters e Setters
+
 
     public String getNomeProduto() {
         return nomeProduto;
